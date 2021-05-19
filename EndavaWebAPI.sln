@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{D191BE54-DB1E-479A-9B4D-48BE10EB6A06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{30D05BAC-6769-4528-94F5-68A00985DB20}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{81D5C6CA-F65C-498E-9C5A-F7AD03FF8D7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D191BE54-DB1E-479A-9B4D-48BE10EB6A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D191BE54-DB1E-479A-9B4D-48BE10EB6A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D191BE54-DB1E-479A-9B4D-48BE10EB6A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D191BE54-DB1E-479A-9B4D-48BE10EB6A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D05BAC-6769-4528-94F5-68A00985DB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D05BAC-6769-4528-94F5-68A00985DB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D05BAC-6769-4528-94F5-68A00985DB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D05BAC-6769-4528-94F5-68A00985DB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D5C6CA-F65C-498E-9C5A-F7AD03FF8D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D5C6CA-F65C-498E-9C5A-F7AD03FF8D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D5C6CA-F65C-498E-9C5A-F7AD03FF8D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D5C6CA-F65C-498E-9C5A-F7AD03FF8D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ACC927B-FA10-4D8D-B74B-D481FB6AA888}
+	EndGlobalSection
+EndGlobal
