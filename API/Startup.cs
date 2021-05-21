@@ -1,9 +1,9 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 using Endava.Internship2020.WebApiExamples.DataAccess;
 using Endava.Internship2020.WebApiExamples.Services;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +20,9 @@ namespace API
             _config = configuration;
         }
 
-
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerExamplesFromAssemblyOf<Startup>();
             services.AddScoped<ITicketsRepository, TicketsRepository>();
@@ -52,15 +49,11 @@ namespace API
                     options.ExampleFilters();
                 }
             );
-
-
-
-
-
             services.AddDbContext<DataContext>(x =>
                     x.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
 
         }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

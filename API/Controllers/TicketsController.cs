@@ -12,8 +12,7 @@ namespace API.Controllers
     {
         private readonly ITicketService _ticketService;
 
-
-        public TicketsController(ITicketService ticketService)
+       public TicketsController(ITicketService ticketService)
         {
             _ticketService = ticketService;
         }
@@ -28,8 +27,8 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetTicketById(int id)
         {
-            var contains = _ticketService.Contains(id);
-            return Ok(contains);
+            var ticket = _ticketService.Get(id);
+            return Ok(ticket);
         }
 
         [HttpGet]
@@ -42,15 +41,9 @@ namespace API.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteById(int id)
         {
-            var contains = _ticketService.Contains(id);
-            if(contains) _ticketService.Delete(id);
-            else
-            {
-                throw new ArgumentNullException($"Ticket with {id} not found");
-            }
-            return Ok(contains);
+            _ticketService.Delete(id);
+            return Ok();
         }
-
 
         [HttpPut]
         public IActionResult Update(Ticket ticket)

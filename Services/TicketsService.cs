@@ -22,21 +22,14 @@ namespace Endava.Internship2020.WebApiExamples.Services
 
         public IReadOnlyCollection<Ticket> GetAll()
         {
-
-          var all = repository.GetAll();
-          if (!all.Any())
-          {
-                throw new NullReferenceException("No tickets available");
-          }
-
-          return this.repository.GetAll();
+            return this.repository.GetAll();
         }
 
         public Ticket Get(int id)
         {
             if (!Contains(id))
             {
-                throw new NullReferenceException($"Ticket with {id} not found");
+                throw new ArgumentNullException($"Ticket with {id} not found");
             }
             return repository.Get(id);
         }
@@ -50,7 +43,7 @@ namespace Endava.Internship2020.WebApiExamples.Services
         {
             if (!Contains(ticket.Id))
             {
-                throw new NullReferenceException($"Ticket with {ticket.Id} not found");
+                throw new ArgumentNullException($"Ticket with {ticket.Id} not found");
             }
             return repository.Update(ticket);
         }
@@ -58,9 +51,9 @@ namespace Endava.Internship2020.WebApiExamples.Services
        
         public Ticket Update(int id, JsonPatchDocument<Ticket> patch)
         {
-            if (Get(id) == null)
+            if (!Contains(id))
             {
-                throw new NullReferenceException($"Ticket with {id} not found");
+                throw new ArgumentNullException($"Ticket with {id} not found");
             }
             var existingTicket = Get(id);
 
@@ -71,9 +64,9 @@ namespace Endava.Internship2020.WebApiExamples.Services
 
         public void Delete(int id)
         {
-            if (Get(id) == null)
+            if (!Contains(id))
             {
-                throw new NullReferenceException($"Ticket with {id} not found");
+                throw new ArgumentNullException($"Ticket with {id} not found");
             }
             repository.Delete(id);
         }
